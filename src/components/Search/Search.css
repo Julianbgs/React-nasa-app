@@ -1,0 +1,38 @@
+.Search {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fafafa;
+}
+
+.Search__Title {
+    width: 100%;
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 28px;
+    text-align: center;
+}
+
+.Search__Box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.Search__Input {
+    width: 220px;
+    height: 30px;
+    padding-left: 20px;
+    border: 1px dashed black;
+    background-color: transparent;
+}
+
+.Search__NoResults {
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    text-align: center;
+    color: #000000;
+    font-size: 24px;
+}
