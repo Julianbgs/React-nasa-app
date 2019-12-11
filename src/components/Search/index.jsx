@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import * as _ from 'lodash';
 
 class Search extends React.Component {
 
@@ -8,16 +9,16 @@ class Search extends React.Component {
     this.state = {
       query: ''
     };
-    //this.handleValue.bind(this);
+    this.handleValue = _.debounce(this.handleValue, 1000);
     this.getAnalytics();
   }
 
-  handleValue = debounce((e) => {
+  handleValue (e) {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
     console.log(this.state.query);
-  }, 500)
+  }
 
   getAnalytics() {
     axios.get('https://images-api.nasa.gov/search?q=mars')
@@ -32,7 +33,10 @@ class Search extends React.Component {
         <div>Im Analytics</div>
         <input type="text"
               name="query"
-              onChange={this.handleValue}
+              onChange={ e => {
+                e.persist();
+                this.handleValue(e)
+              }}
         />
       </div>
     )
