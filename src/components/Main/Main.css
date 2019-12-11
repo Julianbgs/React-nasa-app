@@ -1,0 +1,19 @@
+.Main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.Main__Img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Main__Title {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+}
