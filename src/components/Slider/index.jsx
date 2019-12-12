@@ -26,7 +26,7 @@ class SliderRover extends React.Component{
 
   render() {
     return (
-      <div className="Slider">
+      <div className="Slider" id="rover">
         <h1 className="Slider__title"> Photos by Mars rover Curiosity</h1>
         <Slider>
           {this.state.source.map((item, index) => <div key={index}>

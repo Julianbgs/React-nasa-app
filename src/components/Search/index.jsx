@@ -15,18 +15,14 @@ class Search extends React.Component {
       data: [],
       isVisible: false
     };
-    this.handleValue = _.debounce(this.handleValue, 1000);
+    this.handleValue = _.debounce(this.handleValue, 1500);
   }
 
   handleValue(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state.query);
     this.getAnalytics();
-    this.setState({
-      isVisible: false
-    });
   }
 
   getAnalytics() {
@@ -37,7 +33,11 @@ class Search extends React.Component {
           data: resp.data.collection.items,
           isVisible: true
         })
-
+      })
+      .catch(() => {
+        this.setState({
+          isVisible: false
+        });
       })
   }
 
@@ -68,7 +68,7 @@ class Search extends React.Component {
     }
 
     return (
-      <div className="Search">
+      <div className="Search" id="search">
         <div className="Search__Title">Search all Photos</div>
         <div className="Search__Box">
           <input type="text"
