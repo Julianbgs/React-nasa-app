@@ -6,29 +6,17 @@ import './Header.css';
 
 class Header extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.handleScrollElem = this.handleScrollElem.bind(this);
-    this.handleShowModal = this.handleShowModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.state = {
+    state = {
       isShowing: false
-    }
-  }
+    };
 
-  handleShowModal() {
-    this.setState({
-      isShowing: true
-    })
-  }
+  handleModalShow = () => {
+    this.setState((state) => ({
+      isShowing: !state.isShowing
+    }))
+  };
 
-  handleCloseModal = e => {
-    this.setState({
-      isShowing: !this.state.isShowing
-    })
-  }
-
-  handleScrollElem(e) {
+  handleScrollElem = (e) => {
     let elem = e.target;
     elem.scrollIntoView({
       behavior: 'smooth'
@@ -52,10 +40,10 @@ class Header extends React.Component {
             </li>
           </ul>
         </nav>
-        <div className="Header__Info" onClick={this.handleShowModal}>
+        <div className="Header__Info" onClick={this.handleModalShow}>
           <img src={info} alt=""/>
         </div>
-        <Modal  onClose={this.handleCloseModal} show={this.state.isShowing}></Modal>
+        <Modal  onClose={this.handleModalShow} show={this.state.isShowing}></Modal>
       </header>
     )
   }

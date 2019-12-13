@@ -15,15 +15,17 @@ class Search extends React.Component {
       data: [],
       isVisible: false
     };
-    this.handleValue = _.debounce(this.handleValue, 1500);
   }
 
-  handleValue(e) {
+  handleValue = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+    }, () => {
+      this.getAnalytics();
     });
-    this.getAnalytics();
   }
+
+  handleChange = _.debounce(this.handleValue, 1500);
 
   getAnalytics() {
     axios.get(`https://images-api.nasa.gov/search?q=${this.state.query}`)
@@ -76,7 +78,7 @@ class Search extends React.Component {
                  className="Search__Input"
                  onChange={e => {
                    e.persist();
-                   this.handleValue(e)
+                   this.handleChange(e)
                  }}
           />
         </div>
