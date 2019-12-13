@@ -1,0 +1,51 @@
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.Header__Nav {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.Header__Menu {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Header__Elem {
+    margin-right: 40px;
+}
+
+.Header__Elem:last-child {
+    margin-right: 0;
+}
+
+.Header__Link {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.Header__Info {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.Header__Info img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

@@ -4,6 +4,10 @@
     height: 100vh;
 }
 
+.Main__Banner {
+    height: 100vh;
+}
+
 .Main__Img {
     width: 100%;
     height: 100%;
@@ -12,7 +16,7 @@
 
 .Main__Title {
     position: absolute;
-    top: 40%;
+    top: 50%;
     width: 100%;
     color: #ffffff;
     text-align: center;
