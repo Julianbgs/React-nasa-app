@@ -40,3 +40,9 @@
     color: #000000;
     font-size: 24px;
 }
+
+@media (max-width: 700px) {
+    .Search__Body {
+        padding-top: 50px;
+    }
+}
