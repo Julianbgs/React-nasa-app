@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "nuka-carousel": "^4.5.13",
     "pure-react-carousel": "^1.24.1",
     "react": "^16.12.0",
